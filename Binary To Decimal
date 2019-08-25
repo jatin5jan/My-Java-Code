@@ -1,0 +1,34 @@
+package Conversions;
+
+import java.util.Scanner;
+
+public class binarytoDecimal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);		
+		int bnum;
+		bnum=sc.nextInt();
+		BtoD(bnum);
+		
+	}
+	public static void BtoD(int bnum)   //divided by destination ,  multiply by source
+	{
+		
+		int multiplier=1;
+		
+		int dnum=0;   //binary number
+		while(bnum>0)
+		{
+			int rem=bnum%10;
+			dnum=dnum+rem*multiplier;
+			multiplier*=2;
+			bnum=bnum/10;
+			
+		}
+		System.out.println(dnum);
+	
+	}
+
+}
