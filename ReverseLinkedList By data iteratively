@@ -1,0 +1,40 @@
+private Node getNodeAt(int idx) throws Exception {
+
+		if (size == 0) {
+			throw new Exception("LL is Empty.");
+		}
+
+		if (idx < 0 || idx >= size) {
+			throw new Exception("Invalid Index.");
+		}
+
+		Node temp = head;
+
+		for (int i = 0; i < idx; i++) {
+			temp = temp.next;
+		}
+
+		return temp;
+	}
+
+	
+  public void RDI() throws Exception {
+
+		int left = 0;
+		int right = size - 1;
+
+		while (left < right) {
+
+			Node ln = getNodeAt(left);
+			Node rn = getNodeAt(right);
+
+			int temp = ln.data;
+			ln.data = rn.data;
+			rn.data = temp;
+
+			left++;
+			right--;
+
+		}
+
+	}
